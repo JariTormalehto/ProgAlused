@@ -3,7 +3,7 @@ package Practice4;
 public class Excercise5 {
     public static void main(String[] args) {
 
-        int input = 7;
+        int input = 8;
 
         int lineStart = 0;
 
@@ -16,7 +16,7 @@ public class Excercise5 {
         for (int row = 0; row <= input; row++) {
             System.out.print("I ");
             for (int column = 0; column <= input; column++) {
-                if (row == column)
+                if (row == column || row + column == input)
                     System.out.print("x ");
 
                 else
