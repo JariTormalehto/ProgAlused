@@ -1,7 +1,4 @@
 package Practice3;
-
-import ee.itcollege.ics0004.TextIO;
-
 public class Example3 {
     public static void main(String[] args) {
         System.out.println("Enter age of a woman");

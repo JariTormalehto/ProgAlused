@@ -1,8 +1,5 @@
 package Practice3;
 
-
-import ee.itcollege.ics0004.TextIO;
-
 public class Example4 {
     public static void main(String[] args) {
         System.out.println("Enter password");
