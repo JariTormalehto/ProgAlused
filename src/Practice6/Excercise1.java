@@ -1,4 +1,4 @@
-package ee.itcollege.ics0004.Practice6;
+package Practice6;
 
 import Practice2.TextIO;
 
