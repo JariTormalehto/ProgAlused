@@ -5,13 +5,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
-/*
- * Chess.java requires the following files:
- *   images/right.gif
- *   images/middle.gif
- *   images/left.gif
- */
+
     public class Chess extends JPanel
+
 
 
         implements ActionListener {
@@ -81,25 +77,42 @@ import java.awt.event.KeyEvent;
         add(b6);
     }
 
-    public void actionPerformed(ActionEvent e) {
-        if ("disable".equals(e.getActionCommand())) {
-            b2.setEnabled(false);
-            b1.setEnabled(false);
-            b3.setEnabled(false);
-            b5.setEnabled(false);
-            b4.setEnabled(false);
-            b6.setEnabled(false);
-        } else {
-            b2.setEnabled(true);
-            b1.setEnabled(true);
-            b3.setEnabled(true);
-            b5.setEnabled(true);
-            b4.setEnabled(true);
-            b6.setEnabled(true);
+    public void actionPerformed(ActionEvent evt) {
+        if (evt.getSource() == b1) {
+            KingFrame();
+            JFrame frame = new JFrame("King movements");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            //Create and set up the content pane.
+            King newContentPane = new King();
+            frame.setContentPane(newContentPane);
+
+            //Display the window.
+            frame.pack();
+            frame.setVisible(true);
+
+        } else if (evt.getSource() == b2) {
+            QueenFrame();
+            JFrame frame = new JFrame("Queen movements");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            //Create and set up the content pane.
+            Queen newContentPane = new Queen();
+            frame.setContentPane(newContentPane);
+
+            //Display the window.
+            frame.pack();
+            frame.setVisible(true);
         }
     }
 
-    /** Returns an ImageIcon, or null if the path was invalid. */
+        private void QueenFrame() {
+        }
+
+        private void KingFrame() {
+        }
+
+        /** Returns an ImageIcon, or null if the path was invalid. */
     protected static ImageIcon createImageIcon(String path) {
         java.net.URL imgURL = Chess.class.getResource(path);
         if (imgURL != null) {
@@ -109,9 +122,7 @@ import java.awt.event.KeyEvent;
             return null;
         }
     }
-    class King extends JPanel {
 
-    }
 
     /**
      * Create the GUI and show it.  For thread safety,
@@ -133,6 +144,7 @@ import java.awt.event.KeyEvent;
         frame.pack();
         frame.setVisible(true);
     }
+
 
     public static void main(String[] args) {
         //Schedule a job for the event-dispatching thread:
