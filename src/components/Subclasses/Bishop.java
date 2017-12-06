@@ -1,22 +1,24 @@
-package components;
+package components.Subclasses;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Queen extends Container {
-    public static void main(String[] args) {
+public class Bishop extends Container
 
-        new Queen();
+{
+    public static void main (String[]args){
+
+        new Bishop();
     }
 
-    public Queen() {
+    public Bishop() {
 
         JFrame guiFrame = new JFrame();
 
         //make sure the program exits when the frame closes
-        guiFrame.setTitle("Queen movements");
+        guiFrame.setTitle("Bishop movements");
         guiFrame.setSize(1280, 640);
 
         //This will center the JFrame in the middle of the screen

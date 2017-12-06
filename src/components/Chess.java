@@ -1,19 +1,23 @@
 package components;
 
+import components.Subclasses.*;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
-    public class Chess extends JPanel
+
+public class Chess extends JPanel
 
 
 
         implements ActionListener {
-    protected JButton b1, b2, b3, b4, b5, b6;
+    private JButton b1, b2, b3, b4, b5, b6;
 
-    public Chess() {
+    private Chess() {
         ImageIcon King = createImageIcon("images/king.png");
         ImageIcon Queen = createImageIcon("images/queen.png");
         ImageIcon Rook = createImageIcon("images/rook.png");
@@ -81,7 +85,7 @@ import java.awt.event.KeyEvent;
         if (evt.getSource() == b1) {
             KingFrame();
             JFrame frame = new JFrame("King movements");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
             //Create and set up the content pane.
             King newContentPane = new King();
@@ -94,7 +98,7 @@ import java.awt.event.KeyEvent;
         } else if (evt.getSource() == b2) {
             QueenFrame();
             JFrame frame = new JFrame("Queen movements");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
             //Create and set up the content pane.
             Queen newContentPane = new Queen();
@@ -103,8 +107,67 @@ import java.awt.event.KeyEvent;
             //Display the window.
             frame.pack();
             frame.setVisible(true);
+        } else if (evt.getSource() == b3) {
+            RookFrame();
+            JFrame frame = new JFrame("Rook movements");
+            frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+            //Create and set up the content pane.
+            Rook newContentPane = new Rook();
+            frame.setContentPane(newContentPane);
+
+            //Display the window.
+            frame.pack();
+            frame.setVisible(true);
+        } else if (evt.getSource() == b4) {
+            BishopFrame();
+            JFrame frame = new JFrame("Bishop movements");
+            frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+            //Create and set up the content pane.
+            Bishop newContentPane = new Bishop();
+            frame.setContentPane(newContentPane);
+
+            //Display the window.
+            frame.pack();
+            frame.setVisible(true);
+        } else if (evt.getSource() == b5) {
+            KnightFrame();
+            JFrame frame = new JFrame("Knight movements");
+            frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+            //Create and set up the content pane.
+            Knight newContentPane = new Knight();
+            frame.setContentPane(newContentPane);
+
+            //Display the window.
+            frame.pack();
+            frame.setVisible(true);
+        } else if (evt.getSource() == b6) {
+            PawnFrame();
+            JFrame frame = new JFrame("Pawn movements");
+            frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+            //Create and set up the content pane.
+            Pawn newContentPane = new Pawn();
+            frame.setContentPane(newContentPane);
+
+            //Display the window.
+            frame.pack();
+            frame.setVisible(true);
         }
     }
+        private void KnightFrame() {
+
+        }
+        private void PawnFrame() {
+        }
+
+        private void BishopFrame() {
+        }
+
+        private void RookFrame() {
+        }
 
         private void QueenFrame() {
         }
@@ -113,7 +176,7 @@ import java.awt.event.KeyEvent;
         }
 
         /** Returns an ImageIcon, or null if the path was invalid. */
-    protected static ImageIcon createImageIcon(String path) {
+    private static ImageIcon createImageIcon(String path) {
         java.net.URL imgURL = Chess.class.getResource(path);
         if (imgURL != null) {
             return new ImageIcon(imgURL);
@@ -133,7 +196,7 @@ import java.awt.event.KeyEvent;
 
         //Create and set up the window.
         JFrame frame = new JFrame("Chess movements");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //Create and set up the content pane.
         Chess newContentPane = new Chess();

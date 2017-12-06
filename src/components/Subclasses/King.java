@@ -1,4 +1,4 @@
-package components;
+package components.Subclasses;
 
 
 import javax.swing.*;
@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-class King  extends Container {
+public class King  extends Container {
 
         public static void main(String[] args) {
 
@@ -27,6 +27,8 @@ class King  extends Container {
             //The first JPanel contains a JLabel and JCombobox
             final JPanel image = new JPanel();
             JLabel comboLbl = new JLabel("Movements");
+
+
 
 
             image.add(comboLbl);
@@ -56,5 +58,5 @@ class King  extends Container {
             //make sure the JFrame is visible
             guiFrame.setVisible(true);
         }
-
     }
+
