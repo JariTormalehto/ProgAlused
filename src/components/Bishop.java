@@ -1,24 +1,24 @@
-package components.Subclasses;
+package components;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Rook extends Container
+public class Bishop extends Container
 
-    {
-        public static void main (String[]args){
+{
+    public static void main (String[]args){
 
-        new Rook();
+        new Bishop();
     }
 
-    public Rook() {
+    public Bishop() {
 
         JFrame guiFrame = new JFrame();
 
         //make sure the program exits when the frame closes
-        guiFrame.setTitle("Rook movements");
+        guiFrame.setTitle("Bishop movements");
         guiFrame.setSize(1280, 640);
 
         //This will center the JFrame in the middle of the screen
@@ -26,11 +26,26 @@ public class Rook extends Container
 
         //The first JPanel contains a JLabel and JCombobox
         final JPanel image = new JPanel();
+
+        JPanel titlePanel = new JPanel();
+        JPanel leftPanel = new JPanel();
+        leftPanel.setSize(430, 215);
+        JPanel rightPanel = new JPanel();
+        titlePanel.setBackground(Color.cyan);
         JLabel comboLbl = new JLabel("Movements");
+        titlePanel.add(comboLbl);
 
 
-        image.add(comboLbl);
+        ImageIcon kingIcon = new ImageIcon(this.getClass().getResource("images/bishopmove.jpg"));
+        JPanel bishopImagePanel = new JPanel() {
+            public void paintComponent(Graphics g) {
+                Dimension dimension = getSize();
+                g.drawImage(kingIcon.getImage(), 310, 0, dimension.width / 2, dimension.height, null);
+            }
+        };
 
+        image.add(titlePanel);
+        image.add(bishopImagePanel);
 
         JButton Close = new JButton("Close");
 
@@ -50,12 +65,12 @@ public class Rook extends Container
 
         //The JFrame uses the BorderLayout layout manager.
         //Put the two JPanels and JButton in different areas.
-        guiFrame.add(image, BorderLayout.NORTH);
+        guiFrame.add(titlePanel, BorderLayout.NORTH);
+        guiFrame.add(bishopImagePanel, BorderLayout.CENTER);
+        guiFrame.add(rightPanel, BorderLayout.EAST);
+        guiFrame.add(leftPanel, BorderLayout.WEST);
         guiFrame.add(Close, BorderLayout.SOUTH);
-
         //make sure the JFrame is visible
         guiFrame.setVisible(true);
     }
-    }
-
-
+}
