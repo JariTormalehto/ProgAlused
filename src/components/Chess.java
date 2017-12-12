@@ -32,7 +32,6 @@ public class Chess extends JPanel
         b2.setActionCommand("enable");
 
         b3 = new JButton("Rook", Rook);
-        //Use the default text position of CENTER, TRAILING (RIGHT).
         b3.setMnemonic(KeyEvent.VK_E);
         b3.setActionCommand("enable");
 
@@ -45,7 +44,6 @@ public class Chess extends JPanel
         b5.setActionCommand("enable");
 
         b6 = new JButton("Pawn", Pawn);
-        //Use the default text position of CENTER, TRAILING (RIGHT).
         b6.setMnemonic(KeyEvent.VK_E);
         b6.setActionCommand("enable");
 
@@ -193,7 +191,7 @@ public class Chess extends JPanel
     private static void createAndShowGUI() {
 
         //Create and set up the window.
-        JFrame frame = new JFrame("Chess movements");
+        JFrame frame = new JFrame("Chess movements by Jari Törmälehto IVSB12");
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //Create and set up the content pane.
@@ -208,7 +206,6 @@ public class Chess extends JPanel
 
 
     public static void main(String[] args) {
-        //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
